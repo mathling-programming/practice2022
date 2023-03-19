@@ -1,17 +1,19 @@
 import math
 
-def cos_graph(min_x, max_x, step):
+def graph(func, min_x, max_x, step):
     values = []
     x = min_x
     while x <= max_x:
-        values.append(math.cos(x))
-        x += 0.1
+        values.append(func(x))
+        x += step
 
     dif = max(values)
     while dif >= min(values):
-        graph = ['*' if abs(round(dif-values[i],1))<0.1 else ' ' for i in range(len(values))]
+        graph = ['*' if abs((dif-values[i])/step)<0.5 else ' ' for i in range(len(values))]
         print(''.join(graph))
         dif -= 0.09
 
 
-cos_graph(0.0, 10.0, 0.1)
+graph(lambda x: math.sin(x), 0.0, 10.0, 0.1)
+
+graph(lambda x: math.cos(x), 0.0, 10.0, 0.1)
