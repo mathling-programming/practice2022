@@ -1,6 +1,6 @@
 import math
 
-def log_graph(func, min_x, max_x, step):
+def graph(func, min_x, max_x, step):
     values = []
     x = min_x
     while x <= max_x:
@@ -22,4 +22,4 @@ def log_graph(func, min_x, max_x, step):
         print(''.join(i))
 
 
-log_graph(lambda x: math.log(x), 0.0, 1.5, 0.1)
+graph(lambda x: math.log(x), 0.0, 1.5, 0.1)

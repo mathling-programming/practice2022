@@ -13,4 +13,5 @@ def sin_graph(min_x, max_x, step):
         k = values[i] - min(values)
         print(' '*int(abs(round(k,1))*10)+'*')
 
+
 sin_graph(0.0, 7.3, 0.1)

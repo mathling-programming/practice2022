@@ -43,7 +43,5 @@ def analysis_graph(func, min_x, max_x, step):
         print(''.join(i))
 
 analysis_graph(lambda x: math.sin(x), 0.0, 10.0, 0.1)
-
 analysis_graph(lambda x: math.erf(x), -5.0, 5.0, 0.1)
-
 analysis_graph(lambda x: math.log(x), 0.0, 5.0, 0.1)
