@@ -32,6 +32,9 @@ class Constituent:
             arguments = ','.join(self.words)
 
         return f"{self.tag if self.tag is not None else ''}({arguments})"
+    
+    def __repr__(self):
+        return f"Constituent(tag={self.tag}, children={self.children}, words={self.words})"
 
 class Parser:
     """Базовый класс парсеров, реализует только поддержку операторов"""
@@ -52,7 +55,7 @@ class Parser:
         """Все подклассы должны переопределить этот метод так, чтобы
         он возвращал генератор (yield), выдающий пары (составляющая, хвост цепочки)"""
         pass
-
+        
 class WordParser(Parser):
     """Парсер, который принимает ровно одно заданное слово"""
 
@@ -168,6 +171,7 @@ def whole(p):
     """Сокращение для конструктора WholeParser"""
     return WholeParser(p)
 
+
 N = (word('fox') | word('wolf') | word('ant') | word('table')) @ 'N'
 Adj = (word('quick') | word('brown') | word('table') | word('caught') |
        word('adorable')) @ 'Adj'
@@ -199,3 +203,44 @@ NP = FilterValidArticle(Compl + NP0) @ 'NP'
 VP = V @ 'VP'
 
 S = (NP + VP) @ 'S'
+
+class OptionalParser(Parser):
+    """Опциональный парсер, который возвращает пустую составляющую, 
+    если нижележащий парсер не возвращает ничего."""
+
+    def __init__(self, p):
+        self.p = p # перезаписываем поле объекта OptionalParser, парсером, полученным при его инициализации (создании экземпляра)
+
+    def __call__(self, tokens):
+        """Вызывает нижележащий парсер. Если он не возвращает ничего, 
+        возвращает пустую составляющую."""
+        generator = self.p(tokens)
+        try:
+            first_result = next(generator)
+            yield first_result
+            yield from generator
+        except StopIteration:
+            yield (Constituent(), tokens)
+
+def optional(p):
+    """Сокращение для конструктора OptionalParser"""
+    return OptionalParser(p)
+
+def test_optional_parser():
+    optional_parser = optional(word('a'))
+
+    result1 = next(optional_parser(['a', 'b']))
+    expected1 = (Constituent(tag=None, words=('a',), children=()), ['b'])
+    if str(result1) == str(expected1):
+        print("Тест №1 пройден успешно!")
+    else:
+        print(f"Ожидалось {str(expected1)}, но получено {str(result1)}")
+
+    result2 = next(optional_parser(['b', 'c']))
+    expected2 = (Constituent(tag=None, children=(), words=()), ['b', 'c'])
+    if str(result1) == str(expected1):
+        print("Тест №2 пройден успешно!")
+    else:
+        print(f"Ожидалось {str(expected2)}, но получено {str(result2)}")
+
+test_optional_parser()
