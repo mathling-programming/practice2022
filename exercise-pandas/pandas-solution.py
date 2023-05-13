@@ -6,7 +6,7 @@ text_df = pd.read_csv('text.csv')
 vocab_df = pd.read_csv('vocab.csv')
 
 # Соединение таблиц по столбцу 'WORD'
-merged_df = pd.merge(text_df, vocab_df, on='WORD')
+merged_df = pd.merge(text_df, vocab_df, on='WORD', how='left')
 
 # Фильтрация
 filtered_df = pd.DataFrame()
@@ -32,11 +32,11 @@ plt.figure(figsize=(10, 6))
 
 for pos in filtered_df['POS'].unique():
     subset = filtered_df[filtered_df['POS'] == pos]
-    plt.plot(subset['POS'], subset['rolling_mean'], label=pos)
+    plt.plot(subset['WORDNO'], subset['rolling_mean'], label=pos)
 
-plt.xlabel('Группы по POS')
+plt.xlabel('Группы по WORDNO')
 plt.ylabel('Скользящее среднее значение длины слова')
-
+plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 plt.grid(True)
 plt.title('Скользящее среднее значения длины слова сгруппированного по POS')
 plt.savefig('diagram.png')
