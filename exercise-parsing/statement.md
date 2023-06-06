@@ -20,7 +20,7 @@
      `Constituent(tag=None,
                   children=(Constituent(tag=None, words=('a',), children=()),),
                   words=('a',)), ['b']`
-   - `StarParser(word('a') | word('b'))*['a', 'b', 'c'])` вернет пару:
+   - `StarParser(word('a') | word('b'))(['a', 'b', 'c'])` вернет пару:
      `Constituent(tag=None,
                   children=(Constituent(tag=None, words=('a',), children=()),
                             Constituent(tag=None, words=('b',), children=())),

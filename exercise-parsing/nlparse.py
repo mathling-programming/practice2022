@@ -53,6 +53,26 @@ class Parser:
         он возвращал генератор (yield), выдающий пары (составляющая, хвост цепочки)"""
         pass
 
+class StarParser(Parser):
+
+    def __init__(self, p):
+        self.p = p
+
+    def __call__(self, tokens):
+        constituent = Constituent()  # пустая составляющая, которая и будет возвращена, если парсер не вызывается ни разу
+        visited = True #трекер вхождения в цикл for
+        while visited:
+            visited = False 
+            for c, tokens1 in self.p(tokens):
+                visited = True 
+                tokens = tokens1
+                constituent.children += (c,)
+            if not visited: #если остаток токенов не имеет разбора, то цикл for не начинается, и тогда происходит выход из цикла while
+                break
+        yield (constituent, tokens)
+        
+
+
 class WordParser(Parser):
     """Парсер, который принимает ровно одно заданное слово"""
 
