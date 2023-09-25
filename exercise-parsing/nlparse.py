@@ -1,4 +1,3 @@
-"""Функциональный синтаксический анализ"""
 import re
 
 class Constituent:
