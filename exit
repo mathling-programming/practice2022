@@ -1,0 +1,81 @@
+[33mcommit 245f4b76ffa0b52f817276f287805055f76f6c9b[m[33m ([m[1;36mHEAD -> [m[1;32mgonch[m[33m)[m
+Author: chymish <st079877@student.spbu.ru>
+Date:   Mon Sep 25 19:46:14 2023 +0300
+
+    .
+
+[33mcommit f9c2245bdc8bd988db5506291f6cdb73f1b3caf3[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mgoncharova[m[33m)[m
+Author: Artem Andreev <Artem.Andreev@oktetlabs.ru>
+Date:   Fri Jun 2 17:32:35 2023 +0300
+
+    added exercise for symbolic computation
+
+[33mcommit 5797422a77b87f0cdce3d5c52e214b0b740eee72[m
+Author: Artem Andreev <Artem.Andreev@oktetlabs.ru>
+Date:   Fri Jun 2 17:22:07 2023 +0300
+
+    added Dungeon game exercises
+
+[33mcommit c0d45b255360a15e14f66a56a66692e4a6f7b89f[m
+Author: Artem Andreev <artem.andreev@oktetlabs.ru>
+Date:   Fri May 12 20:14:03 2023 +0300
+
+    fixed links
+
+[33mcommit 9bdef326344b64d5aae72b8f5291e3cb6f043e34[m
+Author: Artem Andreev <artem.andreev@oktetlabs.ru>
+Date:   Fri May 12 20:07:16 2023 +0300
+
+    added exercise for Pandas
+
+[33mcommit b4a86905f0e65c4c66d9d5717b39e11b222585e0[m
+Author: Artem V. Andreev <Artem.Andreev@oktetlabs.ru>
+Date:   Wed Apr 19 13:22:59 2023 +0300
+
+    parsing exercise
+    
+    Signed-off-by: Artem V. Andreev <Artem.Andreev@oktetlabs.ru>
+
+[33mcommit dba5893f42d06d8955ed5f54fe635a44a6b5eceb[m
+Author: Artem V. Andreev <Artem.Andreev@oktetlabs.ru>
+Date:   Thu Mar 23 16:41:00 2023 +0300
+
+    fixed std limit
+    
+    Signed-off-by: Artem V. Andreev <Artem.Andreev@oktetlabs.ru>
+
+[33mcommit 2988db8de9dc64714d13e04e1a8db932b34866f1[m
+Author: Artem V. Andreev <Artem.Andreev@oktetlabs.ru>
+Date:   Thu Mar 23 16:40:11 2023 +0300
+
+    fixed hrefs
+    
+    Signed-off-by: Artem V. Andreev <Artem.Andreev@oktetlabs.ru>
+
+[33mcommit 9aa7f002c8a94592cf722cd3539fa332fdc4e04d[m
+Author: Artem V. Andreev <Artem.Andreev@oktetlabs.ru>
+Date:   Thu Mar 23 16:38:46 2023 +0300
+
+    exercise 2 for magisters
+    
+    Signed-off-by: Artem V. Andreev <Artem.Andreev@oktetlabs.ru>
+
+[33mcommit 8d07e7f2b60b7668791911b41b650834b45c977e[m
+Author: Artem Andreev <artem.andreev@oktetlabs.ru>
+Date:   Tue Mar 14 21:34:34 2023 +0300
+
+    exercise 1: updated links
+    
+    Signed-off-by: Artem Andreev <artem.andreev@oktetlabs.ru>
+
+[33mcommit 45729bacbc18e3b938dd16a9e6f7ae979346d371[m
+Author: Artem Andreev <artem.andreev@oktetlabs.ru>
+Date:   Tue Mar 14 20:49:01 2023 +0300
+
+    first exercise
+
+[33mcommit 896b00a9db958df3fde1e3b04e194f1efaa9583c[m
+Author: Artem Andreev <60471667+ol-arteman@users.noreply.github.com>
+Date:   Wed Mar 8 21:14:35 2023 +0300
+
+    Initial commit
