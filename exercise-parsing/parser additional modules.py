@@ -12,3 +12,4 @@ class StarParser(Parser):
         for c, tokens1 in self.p(tokens):
             for c2, tokens2 in self(tokens1):
                 yield (c + c2, tokens2)
+
