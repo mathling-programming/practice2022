@@ -18,8 +18,8 @@ def save_grouped_word_lengths(rolling_word_df):
     rolling_word_df.to_html('output.html')
 
 def main():
-    text_df = pd.read_csv('text.csv')
-    vocab_df = pd.read_csv('vocab.csv')
+    text_df = pd.read_csv('pand by Alina/first/text.csv')
+    vocab_df = pd.read_csv('pand by Alina/first/vocab.csv')
 
     merged_df = text_df.merge(vocab_df, on='WORD')
 
